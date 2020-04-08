@@ -172,10 +172,48 @@ export default class App {
   switchGridSize() {
     const buttonWrapper = document.querySelector('.size-buttons');    
 
-    function switchSize () {
-      console.log('switch')
+    function switchSize ({ target }) {
+      if (!target.classList.contains('button')) return;
+
+      const gameSize = document.querySelector('.game-size__value');
+      const gameWrapper = document.querySelector('.game-wrapper');
+
+      const currentValue = target.innerHTML;
+
+      this.state.size = currentValue;
+      gameSize.innerHTML = target.innerHTML;
+      gameWrapper.innerHTML = '';
+
+      const gridWrapper = this.createElement(this.getGameGridTemplate());
+      const gridCells = this.getGameGridElements();
+
+      gridWrapper.appendChild(gridCells);
+      gameWrapper.appendChild(gridWrapper);
+      
+      this.resetCounter();
+      this.resetTime();
+      this.moveHandler();
     }
-    buttonWrapper.addEventListener('click', switchSize);
+
+    buttonWrapper.addEventListener('click', switchSize.bind(this));
+    this.moveHandler().bind(this);
+  }
+
+  resetCounter() {    
+    const counter = document.querySelector('.game-status__moves-amount');
+    this.state.counter = 0;
+    counter.innerHTML = this.state.counter;
+  }
+
+  resetTime() {    
+    const min = document.querySelector('.game-status__time-min');
+    const sec = document.querySelector('.game-status__time-sec');
+
+    this.state.time.min = '11';
+    this.state.time.sec = '11';
+
+    min.innerHTML = this.state.time.min;
+    sec.innerHTML = this.state.time.sec;
   }
 
   start() {
