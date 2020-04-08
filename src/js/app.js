@@ -2,8 +2,7 @@ export default class App {
   constructor() {
     this.state = {
       size: '3x3',
-    };
-    
+    };    
   }
   
   getTemplate() {
@@ -39,28 +38,48 @@ export default class App {
   }
 
   getCellTemplate(data) {
-    return `<div class="game__cell"><span class="game__cell-content">${data}</span></div>`;
+    return `<div class="game__cell"><span class="game__cell-content" draggable="true">${data}</span></div>`;
+  }
+
+  getEmptyCellTemplate() {
+    return `<div class="game__cell"></div>`;
+  }
+
+  // https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
+  shuffle(array) {
+    let counter = array.length;
+
+    while (counter > 0) {
+      let index = Math.floor(Math.random() * counter);
+      counter--;
+
+      let temp = array[counter];
+      array[counter] = array[index];
+      array[index] = temp;
+    }
+
+    return array;
   }
   
   getGameGridElements() {
     let elementsValue = Math.pow(this.state.size[0], 2);
     const arrayOfCellValue = [];
 
-    for (let i = 0; i < elementsValue; i++) {
-      if (i === 0) {
-        arrayOfCellValue.push('');
-      } else {
-        arrayOfCellValue.push(i);
-      }  
+    for (let i = 1; i < elementsValue; i++) {
+      arrayOfCellValue.push(i);       
     }
 
+    const shuffleElements = this.shuffle(arrayOfCellValue);
     const elementsTemplate = document.createDocumentFragment();
 
-    arrayOfCellValue.forEach((element) => {
+    shuffleElements.forEach((element) => {
       const cellTemplate = this.getCellTemplate(element);      
       const cell = this.createElement(cellTemplate);
       elementsTemplate.appendChild(cell);
-    })
+    });
+    
+    const emptyCell = this.createElement(this.getEmptyCellTemplate());
+    elementsTemplate.appendChild(emptyCell);
 
     return elementsTemplate;
   }
@@ -72,6 +91,55 @@ export default class App {
     return newElement.content.children[0];
   }
 
+  moveHandler() {
+    const gameGrid = document.querySelector('.game');
+    const cells = document.querySelectorAll('.game__cell');
+    let dragElement = null;
+    let cell = null;
+    
+    function dragStart({ target }) {
+      dragElement = target.cloneNode(true);
+      cell = target.parentNode;
+
+      setTimeout(() => {
+        target.classList.add('invisible');
+      }, 0);      
+    }
+
+    function dragEnd() {
+    }
+
+    function dragOver(event) {
+      event.preventDefault();
+    }
+
+    function dragEnter(event) {
+      event.preventDefault();
+      const { target } = event;
+      target.classList.add('hovered');
+    }
+
+    function dragLeave({ target }) {
+      target.classList.remove('hovered');
+    }
+    
+    function dragDrop({ target }) {
+      target.classList.remove('hovered');
+      target.appendChild(dragElement);
+      cell.innerHTML = '';
+    }
+
+    for(const cell of cells) {
+      cell.addEventListener('dragover', dragOver);
+      cell.addEventListener('dragenter', dragEnter);
+      cell.addEventListener('dragleave', dragLeave);
+      cell.addEventListener('drop', dragDrop);
+    }
+
+    gameGrid.addEventListener('dragstart', dragStart);
+    gameGrid.addEventListener('dragend', dragEnd);
+  }
+
   start() {
     const appTemplate = this.getTemplate();
     const app = this.createElement(appTemplate);  
@@ -80,5 +148,7 @@ export default class App {
 
     gridWrapper.appendChild(gridCells);
     document.body.appendChild(app);
+
+    this.moveHandler();
   }
 }
