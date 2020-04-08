@@ -13,7 +13,7 @@ export default class App {
   getTemplate() {
     return `<main class="wrapper">
     <div class="main-buttons">
-      <button class="main-buttons__button button">Размешать и начать</button>
+      <button id="restart" class="main-buttons__button button">Размешать и начать</button>
       <button class="main-buttons__button main-buttons__button--stop button">Стоп</button>
       <button class="main-buttons__button button">Сохранить</button>
       <button class="main-buttons__button button">Результаты</button>
@@ -196,7 +196,6 @@ export default class App {
     }
 
     buttonWrapper.addEventListener('click', switchSize.bind(this));
-    this.moveHandler().bind(this);
   }
 
   resetCounter() {    
@@ -215,6 +214,22 @@ export default class App {
     min.innerHTML = this.state.time.min;
     sec.innerHTML = this.state.time.sec;
   }
+  
+  onButtonClick() {
+    function onClick({ target }) {
+      if (target.id === 'restart') {
+        document.body.innerHTML = '';
+        this.state.counter = 0;
+        this.start();
+      }
+    } 
+    
+    document.querySelector('.main-buttons').addEventListener('click', onClick.bind(this));
+  }
+
+  restart() {
+    this.start();
+  }
 
   start() {
     const appTemplate = this.getTemplate();
@@ -229,5 +244,6 @@ export default class App {
 
     this.moveHandler();
     this.switchGridSize();
-  }
+    this.onButtonClick();    
+  } 
 }
