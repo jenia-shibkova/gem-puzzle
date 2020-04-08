@@ -1,3 +1,5 @@
+import UTILS from './utils';
+
 export default class App {
   constructor() {
     this.state = {
@@ -11,12 +13,19 @@ export default class App {
     this.gameKeys = [
       '012345678',
       '123456780',
+      '147258360',
+      '741852063',
+      '761852043',
       '0123456789101112131415',
-      '01234567891011121314150',
-      '123456789101112131415161718192021222324',
-      '1234567891011121314151617181920212223242526272829303132333435',
-      '123456789101112131415161718192021222324252627282930313233343536373839404142434445464748',
-      '123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263',
+      '1234567891011121314150',
+      '1234567891011121314151617181920212223240',
+      '0123456789101112131415161718192021222324',
+      '01234567891011121314151617181920212223242526272829303132333435',
+      '12345678910111213141516171819202122232425262728293031323334350',
+      '0123456789101112131415161718192021222324252627282930313233343536373839404142434445464748',
+      '1234567891011121314151617181920212223242526272829303132333435363738394041424344454647480',
+      '0123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263',
+      '1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162630',
     ]    
   }
   
@@ -26,7 +35,7 @@ export default class App {
       <button id="restart" class="main-buttons__button button">Размешать и начать</button>
       <button class="main-buttons__button main-buttons__button--stop button">Стоп</button>
       <button class="main-buttons__button button">Сохранить</button>
-      <button class="main-buttons__button button">Результаты</button>
+      <button id="results" class="main-buttons__button button">Результаты</button>
     </div>
     <p class="game-status">
       <span class="game-status__moves-label">Ходов</span>
@@ -234,6 +243,10 @@ export default class App {
         this.state.counter = 0;
         this.start();
       }
+
+      if (target.id === 'results') {
+        this.showResults();
+      }
     } 
     
     document.querySelector('.main-buttons').addEventListener('click', onClick.bind(this));
@@ -243,21 +256,32 @@ export default class App {
     const elements = document.querySelectorAll('.game__cell-content');
     const empty = document.querySelector('.empty');
     let result = [];
-    const nextValue = empty.nextSibling.querySelector('span').innerHTML;
+    
+    const nextElement = empty.nextSibling;
 
-    elements.forEach((element, index) => {
-      result.push(element.innerHTML);
-      if (elements[index + 1]) {
-        if (elements[index + 1].innerHTML === nextValue) {
-          result.push(0);
-        }
-      }      
-    });
+    if (!nextElement) {
+      elements.forEach((element) => {
+        result.push(element.innerHTML);                     
+      }); 
+      result.push(0);
+    } else {
+      const nextValue = nextElement.querySelector('span').innerHTML;
+
+      elements.forEach((element, index) => {
+        result.push(element.innerHTML);
+        if (elements[index + 1]) {
+          if (elements[index + 1].innerHTML === nextValue) {
+            result.push(0);
+          }
+        }      
+      });
+    }    
 
     let str = result.join('');
     
     if (this.gameKeys.includes(str)) {
       this.popupAction();
+      this.saveResultValue();
     } else {
       console.log('try again')
     }
@@ -279,19 +303,62 @@ export default class App {
     const popup = this.createElement(template);
   
     contentWrapper.appendChild(popup);
-
-    const closePopup = () => {
-      document.querySelector('.popup__button').addEventListener('click', () => {
-        const popup = document.querySelector('.popup');
-        document.querySelector('main').removeChild(popup);    
-      })
-    };
-
-    closePopup();  
+    this.closePopup();
   } 
 
   restart() {
+    document.body.innerHTML = '';
+    this.state.counter = 0;
+    this.state.time.min = '00';
+    this.state.time.sec = '00';
     this.start();
+  }
+  
+  saveResultValue() {
+    const result = `Ходов ${this.state.counter} Время ${this.state.time.min} : ${this.state.time.sec}`;
+    UTILS.saveResult(result);
+  }
+
+  showResults() {
+    const storedResults = JSON.parse(localStorage.getItem('results'));
+    let resultTemplate;
+
+    let emptyValue = `<p class='popup__result-value'>Пусто</p>`;
+    const fragment = document.createDocumentFragment();
+
+    const template = `<div class='popup'>
+          <div class='popup__content'>      
+            <div class='popup__results'></div>           
+            <button class='button popup__button'>OK</button>
+          </div>
+        </div>`;    
+    
+    const contentWrapper = document.querySelector('main');
+    const popup = this.createElement(template);
+
+    if (!storedResults) {
+      const empty = this.createElement(emptyValue);
+      popup.querySelector('.popup__results').appendChild(empty);
+    } else {
+      storedResults.forEach((item) => {
+        resultTemplate = `<p class='popup__result-value'>${item}</p>`;
+        const element = this.createElement(resultTemplate);
+        fragment.appendChild(element);
+      });       
+
+      popup.querySelector('.popup__results').appendChild(fragment);     
+    }
+  
+    contentWrapper.appendChild(popup);    
+    this.closePopup();    
+  }
+
+  closePopup() {
+    document.querySelector('.popup__button').addEventListener('click', () => {
+      const popup = document.querySelector('.popup');
+      document.querySelector('main').removeChild(popup); 
+      this.restart();    
+    });       
   }
 
   start() {
@@ -307,6 +374,6 @@ export default class App {
 
     this.moveHandler();
     this.switchGridSize();
-    this.onButtonClick();    
+    this.onButtonClick();
   } 
 }
