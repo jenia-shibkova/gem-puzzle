@@ -1,3 +1,14 @@
 .game-status {
   text-align: center;  
 }
+
+.game-status__moves-amount,
+.game-status__time-min,
+.game-status__time-sec {
+  color: $btn-color-active;
+  font-weight: 700;
+}
+
+.game-status__moves-amount {
+  margin-right: 10px;
+}
