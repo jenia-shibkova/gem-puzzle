@@ -1,7 +1,12 @@
 export default class App {
   constructor() {
     this.state = {
-      size: '3x3',
+      size: '4x4',
+      counter: 0,
+      time: {
+        min: '00',
+        sec: '00'
+      }
     };    
   }
   
@@ -17,11 +22,10 @@ export default class App {
       <span class="game-status__moves-label">Ходов</span>
       <span class="game-status__moves-amount">0</span>
       <span class="game-status__time-label">Время</span>
-      <span class="game-status__time-min"></span> :
-      <span class="game-status__time-sec"></span>
+      <span class="game-status__time-min">${this.state.time.min}</span> :
+      <span class="game-status__time-sec">${this.state.time.sec}</span>
     </p>
-    <div class="game game--${this.state.size}">
-    </div>
+    <div class="game-wrapper"></div>    
     <p class="game-size">
       <span class="game-size__label">Размер поля</span>
       <span class="game-size__value">${this.state.size}</span>
@@ -37,12 +41,16 @@ export default class App {
     </div>`;
   }
 
+  getGameGridTemplate() {
+    return `<div class="game game--${this.state.size}"></div>`;
+  }
+
   getCellTemplate(data) {
     return `<div class="game__cell"><span class="game__cell-content" draggable="true">${data}</span></div>`;
   }
 
   getEmptyCellTemplate() {
-    return `<div class="game__cell"></div>`;
+    return `<div class="game__cell empty"></div>`;
   }
 
   // https://stackoverflow.com/questions/6274339/how-can-i-shuffle-an-array
@@ -96,8 +104,10 @@ export default class App {
     const cells = document.querySelectorAll('.game__cell');
     let dragElement = null;
     let cell = null;
+    let active = null;
     
     function dragStart({ target }) {
+      active = target;
       dragElement = target.cloneNode(true);
       cell = target.parentNode;
 
@@ -111,6 +121,8 @@ export default class App {
 
     function dragOver(event) {
       event.preventDefault();
+      const { target } = event;
+      if (!target.classList.contains('empty')) return;
     }
 
     function dragEnter(event) {
@@ -125,30 +137,59 @@ export default class App {
     
     function dragDrop({ target }) {
       target.classList.remove('hovered');
-      target.appendChild(dragElement);
+
+      if (!target.classList.contains('empty')) {
+        active.classList.remove('invisible');
+        return;
+      }
+
+      target.appendChild(dragElement);      
       cell.innerHTML = '';
+
+      target.classList.remove('empty');
+      cell.classList.add('empty');
+      this.increaseCounter();
     }
 
     for(const cell of cells) {
       cell.addEventListener('dragover', dragOver);
       cell.addEventListener('dragenter', dragEnter);
       cell.addEventListener('dragleave', dragLeave);
-      cell.addEventListener('drop', dragDrop);
+      cell.addEventListener('drop', dragDrop.bind(this));
     }
 
     gameGrid.addEventListener('dragstart', dragStart);
     gameGrid.addEventListener('dragend', dragEnd);
   }
+  
+  increaseCounter() {
+    const counter = document.querySelector('.game-status__moves-amount');
+
+    this.state.counter += 1;
+    counter.innerHTML = this.state.counter;
+  }
+
+  switchGridSize() {
+    const buttonWrapper = document.querySelector('.size-buttons');    
+
+    function switchSize () {
+      console.log('switch')
+    }
+    buttonWrapper.addEventListener('click', switchSize);
+  }
 
   start() {
     const appTemplate = this.getTemplate();
     const app = this.createElement(appTemplate);  
-    const gridWrapper = app.querySelector('.game');  
+    const gameWrapper = app.querySelector('.game-wrapper');
+    const gridWrapper = this.createElement(this.getGameGridTemplate());
     const gridCells = this.getGameGridElements();
 
     gridWrapper.appendChild(gridCells);
+    gameWrapper.appendChild(gridWrapper);
     document.body.appendChild(app);
 
     this.moveHandler();
+    this.switchGridSize();
   }
 }
