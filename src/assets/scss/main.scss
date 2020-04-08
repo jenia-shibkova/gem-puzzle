@@ -1,8 +1,15 @@
-@import
-  "utils/vars";
+@import "utils/vars";
+
+@import "components/button";
 
 @import "vendors/normalize";
 
+@import 
+  "layout/game",
+  "layout/main-buttons",
+  "layout/game-status",
+  "layout/size-buttons",
+  "layout/game-size";
 
 * {
   box-sizing: border-box;
@@ -11,4 +18,12 @@
 body {
   font-family: "Roboto", "Arial", sans-serif;
   font-weight: 400;
+}
+
+.wrapper {
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }

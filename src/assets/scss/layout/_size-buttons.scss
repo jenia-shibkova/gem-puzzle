@@ -1,0 +1,25 @@
+.size-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.size-buttons__button {  
+  color: $text-color;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+.size-buttons__button:hover,
+.size-buttons__button:active {
+  color: $btn-color-active;
+}
+
+@media (max-width: 375px) {
+  .size-buttons__label {
+    width: 100%;
+    display: inline-block;   
+    margin-bottom: 10px; 
+    text-align: center;
+  }
+}
