@@ -1,0 +1,14 @@
+@import
+  "utils/vars";
+
+@import "vendors/normalize";
+
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", "Arial", sans-serif;
+  font-weight: 400;
+}
