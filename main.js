@@ -97,7 +97,7 @@
 var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(/*! ../../../node_modules/css-loader/dist/runtime/api.js */ "./node_modules/css-loader/dist/runtime/api.js");
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".button {\n  cursor: pointer;\n  background: none;\n  border: none;\n  outline: none; }\n\n.popup {\n  position: fixed;\n  width: 100vw;\n  height: 100vh;\n  z-index: 5;\n  top: 0;\n  background-color: rgba(0, 0, 0, 0.5);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center; }\n\n.popup__content {\n  width: 400px;\n  height: 400px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  background-color: RGB(240, 240, 248);\n  border-radius: 15%;\n  padding: 40px; }\n\n.popup__title {\n  text-align: center;\n  font-weight: 700;\n  font-size: 30px; }\n\n.popup__subject,\n.popup__desc {\n  -moz-text-align-last: left;\n  text-align-last: left;\n  font-weight: 400; }\n\n.popup__button {\n  margin-top: auto; }\n\n/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */\n/* Document\r\n   ========================================================================== */\n/**\r\n * 1. Correct the line height in all browsers.\r\n * 2. Prevent adjustments of font size after orientation changes in iOS.\r\n */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\r\n   ========================================================================== */\n/**\r\n * Remove the margin in all browsers.\r\n */\nbody {\n  margin: 0; }\n\n/**\r\n * Render the `main` element consistently in IE.\r\n */\nmain {\n  display: block; }\n\n/**\r\n * Correct the font size and margin on `h1` elements within `section` and\r\n * `article` contexts in Chrome, Firefox, and Safari.\r\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\r\n   ========================================================================== */\n/**\r\n * 1. Add the correct box sizing in Firefox.\r\n * 2. Show the overflow in Edge and IE.\r\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\r\n * 1. Correct the inheritance and scaling of font size in all browsers.\r\n * 2. Correct the odd `em` font sizing in all browsers.\r\n */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Text-level semantics\r\n   ========================================================================== */\n/**\r\n * Remove the gray background on active links in IE 10.\r\n */\na {\n  background-color: transparent; }\n\n/**\r\n * 1. Remove the bottom border in Chrome 57-\r\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\r\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\r\n * Add the correct font weight in Chrome, Edge, and Safari.\r\n */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\r\n * 1. Correct the inheritance and scaling of font size in all browsers.\r\n * 2. Correct the odd `em` font sizing in all browsers.\r\n */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\r\n * Add the correct font size in all browsers.\r\n */\nsmall {\n  font-size: 80%; }\n\n/**\r\n * Prevent `sub` and `sup` elements from affecting the line height in\r\n * all browsers.\r\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\r\n   ========================================================================== */\n/**\r\n * Remove the border on images inside links in IE 10.\r\n */\nimg {\n  border-style: none; }\n\n/* Forms\r\n   ========================================================================== */\n/**\r\n * 1. Change the font styles in all browsers.\r\n * 2. Remove the margin in Firefox and Safari.\r\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\r\n * Show the overflow in IE.\r\n * 1. Show the overflow in Edge.\r\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible; }\n\n/**\r\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\r\n * 1. Remove the inheritance of text transform in Firefox.\r\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\r\n * Correct the inability to style clickable types in iOS and Safari.\r\n */\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\n/**\r\n * Remove the inner border and padding in Firefox.\r\n */\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0; }\n\n/**\r\n * Restore the focus styles unset by the previous rule.\r\n */\nbutton:-moz-focusring,\n[type=\"button\"]:-moz-focusring,\n[type=\"reset\"]:-moz-focusring,\n[type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n\n/**\r\n * Correct the padding in Firefox.\r\n */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\r\n * 1. Correct the text wrapping in Edge and IE.\r\n * 2. Correct the color inheritance from `fieldset` elements in IE.\r\n * 3. Remove the padding so developers are not caught out when they zero out\r\n *    `fieldset` elements in all browsers.\r\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\r\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\r\n */\nprogress {\n  vertical-align: baseline; }\n\n/**\r\n * Remove the default vertical scrollbar in IE 10+.\r\n */\ntextarea {\n  overflow: auto; }\n\n/**\r\n * 1. Add the correct box sizing in IE 10.\r\n * 2. Remove the padding in IE 10.\r\n */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\r\n * Correct the cursor style of increment and decrement buttons in Chrome.\r\n */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\r\n * 1. Correct the odd appearance in Chrome and Safari.\r\n * 2. Correct the outline style in Safari.\r\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */ }\n\n/**\r\n * Remove the inner padding in Chrome and Safari on macOS.\r\n */\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\r\n * 1. Correct the inability to style clickable types in iOS and Safari.\r\n * 2. Change font properties to `inherit` in Safari.\r\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/* Interactive\r\n   ========================================================================== */\n/*\r\n * Add the correct display in Edge, IE 10+, and Firefox.\r\n */\ndetails {\n  display: block; }\n\n/*\r\n * Add the correct display in all browsers.\r\n */\nsummary {\n  display: list-item; }\n\n/* Misc\r\n   ========================================================================== */\n/**\r\n * Add the correct display in IE 10+.\r\n */\ntemplate {\n  display: none; }\n\n/**\r\n * Add the correct display in IE 10.\r\n */\n[hidden] {\n  display: none; }\n\n.game {\n  background: RGB(240, 240, 248);\n  display: grid;\n  grid-gap: 6px;\n  padding: 10px;\n  justify-content: center;\n  align-content: center;\n  width: 50%;\n  margin: 0 auto; }\n\n.game--3x3 {\n  grid-template-columns: repeat(3, 80px);\n  grid-template-rows: repeat(3, 80px); }\n\n.game--3x3 .game__cell-content {\n  line-height: 80px; }\n\n.game--4x4 {\n  grid-template-columns: repeat(4, 60px);\n  grid-template-rows: repeat(4, 60px);\n  width: 40%; }\n\n.game--4x4 .game__cell-content {\n  line-height: 60px; }\n\n.game--5x5 {\n  grid-template-columns: repeat(5, 50px);\n  grid-template-rows: repeat(5, 50px);\n  width: 50%; }\n\n.game--5x5 .game__cell-content {\n  line-height: 50px; }\n\n.game--6x6 {\n  grid-template-columns: repeat(6, 40px);\n  grid-template-rows: repeat(6, 40px); }\n\n.game--6x6 .game__cell-content {\n  line-height: 40px; }\n\n.game--7x7 {\n  grid-template-columns: repeat(7, 40px);\n  grid-template-rows: repeat(7, 40px); }\n\n.game--7x7 .game__cell-content {\n  line-height: 40px; }\n\n.game--8x8 {\n  grid-template-columns: repeat(8, 30px);\n  grid-template-rows: repeat(8, 30px); }\n\n.game--8x8 .game__cell-content {\n  line-height: 30px; }\n\n.game__cell {\n  background-color: #ffffff;\n  display: flex;\n  align-items: center;\n  border-radius: 5px;\n  transition: all 0.7s; }\n\n.game__cell:hover {\n  cursor: grab; }\n\n.game__cell-content {\n  display: inline-block;\n  margin: 0 auto;\n  font-weight: 700;\n  vertical-align: middle;\n  text-align: center;\n  width: 100%;\n  height: 100%;\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Chrome/Safari/Opera */\n  -khtml-user-select: none;\n  /* Konqueror */\n  -moz-user-select: none;\n  /* Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently\n                                  not supported by any browser */ }\n\n.game__cell-content:hover {\n  background-color: RGB(253, 153, 42);\n  color: #ffffff;\n  border-radius: 50%; }\n\n@media (max-width: 760px) {\n  .game--6x6 {\n    width: 100%; }\n  .game--4x4 {\n    width: 100%; } }\n\n@media (max-width: 700px) {\n  .game--7x7 {\n    width: 100%; } }\n\n@media (max-width: 600px) {\n  .game--5x5 {\n    width: 100%; } }\n\n@media (max-width: 475px) {\n  .game {\n    width: 100%; } }\n\n.main-buttons {\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 20px; }\n\n.main-buttons__button {\n  padding: 8px;\n  background-color: RGB(68, 85, 141);\n  margin-bottom: 4px;\n  margin-right: 4px;\n  border-radius: 5px;\n  color: #ffffff; }\n\n.main-buttons__button--stop {\n  background-color: RGB(57, 58, 86); }\n\n.main-buttons__button:hover,\n.main-buttons__button:active {\n  background-color: RGB(253, 153, 42);\n  color: RGB(36, 38, 61); }\n\n.game-status {\n  text-align: center; }\n\n.game-status__moves-amount,\n.game-status__time-min,\n.game-status__time-sec {\n  color: RGB(253, 153, 42);\n  font-weight: 700; }\n\n.game-status__moves-amount {\n  margin-right: 10px; }\n\n.size-buttons {\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap; }\n\n.size-buttons__button {\n  color: RGB(36, 38, 61);\n  font-weight: 700;\n  text-decoration: underline; }\n\n.size-buttons__button:hover,\n.size-buttons__button:active {\n  color: RGB(253, 153, 42); }\n\n@media (max-width: 375px) {\n  .size-buttons__label {\n    width: 100%;\n    display: inline-block;\n    margin-bottom: 10px;\n    text-align: center; } }\n\n.game-size {\n  text-align: center; }\n\n.game-size__value {\n  color: RGB(253, 153, 42);\n  font-weight: 700; }\n\n* {\n  box-sizing: border-box; }\n\nbody {\n  font-family: \"Roboto\", \"Arial\", sans-serif;\n  font-weight: 400; }\n\n.wrapper {\n  padding-left: 20px;\n  padding-right: 20px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  position: relative; }\n\n.invisible {\n  display: none; }\n\n.hovered {\n  background-color: RGBA(68, 85, 141, 0.5); }\n", ""]);
+exports.push([module.i, ".button {\n  cursor: pointer;\n  background: none;\n  border: none;\n  outline: none; }\n\n.popup {\n  position: fixed;\n  width: 100vw;\n  height: 100vh;\n  z-index: 5;\n  top: 0;\n  background-color: rgba(0, 0, 0, 0.5);\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-align: center;\n  -ms-flex-align: center;\n  align-items: center;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center; }\n\n.popup__content {\n  width: 400px;\n  height: 400px;\n  display: -webkit-box;\n  display: -ms-flexbox;\n  display: flex;\n  -webkit-box-orient: vertical;\n  -webkit-box-direction: normal;\n  -ms-flex-direction: column;\n  flex-direction: column;\n  -webkit-box-pack: center;\n  -ms-flex-pack: center;\n  justify-content: center;\n  background-color: RGB(240, 240, 248);\n  border-radius: 15%;\n  padding: 40px; }\n\n.popup__title {\n  text-align: center;\n  font-weight: 700;\n  font-size: 20px; }\n\n.popup__result-value {\n  text-align: center;\n  font-weight: 400; }\n\n.popup__button {\n  margin-top: auto; }\n\n/*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */\n/* Document\r\n   ========================================================================== */\n/**\r\n * 1. Correct the line height in all browsers.\r\n * 2. Prevent adjustments of font size after orientation changes in iOS.\r\n */\nhtml {\n  line-height: 1.15;\n  /* 1 */\n  -webkit-text-size-adjust: 100%;\n  /* 2 */ }\n\n/* Sections\r\n   ========================================================================== */\n/**\r\n * Remove the margin in all browsers.\r\n */\nbody {\n  margin: 0; }\n\n/**\r\n * Render the `main` element consistently in IE.\r\n */\nmain {\n  display: block; }\n\n/**\r\n * Correct the font size and margin on `h1` elements within `section` and\r\n * `article` contexts in Chrome, Firefox, and Safari.\r\n */\nh1 {\n  font-size: 2em;\n  margin: 0.67em 0; }\n\n/* Grouping content\r\n   ========================================================================== */\n/**\r\n * 1. Add the correct box sizing in Firefox.\r\n * 2. Show the overflow in Edge and IE.\r\n */\nhr {\n  box-sizing: content-box;\n  /* 1 */\n  height: 0;\n  /* 1 */\n  overflow: visible;\n  /* 2 */ }\n\n/**\r\n * 1. Correct the inheritance and scaling of font size in all browsers.\r\n * 2. Correct the odd `em` font sizing in all browsers.\r\n */\npre {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/* Text-level semantics\r\n   ========================================================================== */\n/**\r\n * Remove the gray background on active links in IE 10.\r\n */\na {\n  background-color: transparent; }\n\n/**\r\n * 1. Remove the bottom border in Chrome 57-\r\n * 2. Add the correct text decoration in Chrome, Edge, IE, Opera, and Safari.\r\n */\nabbr[title] {\n  border-bottom: none;\n  /* 1 */\n  text-decoration: underline;\n  /* 2 */\n  text-decoration: underline dotted;\n  /* 2 */ }\n\n/**\r\n * Add the correct font weight in Chrome, Edge, and Safari.\r\n */\nb,\nstrong {\n  font-weight: bolder; }\n\n/**\r\n * 1. Correct the inheritance and scaling of font size in all browsers.\r\n * 2. Correct the odd `em` font sizing in all browsers.\r\n */\ncode,\nkbd,\nsamp {\n  font-family: monospace, monospace;\n  /* 1 */\n  font-size: 1em;\n  /* 2 */ }\n\n/**\r\n * Add the correct font size in all browsers.\r\n */\nsmall {\n  font-size: 80%; }\n\n/**\r\n * Prevent `sub` and `sup` elements from affecting the line height in\r\n * all browsers.\r\n */\nsub,\nsup {\n  font-size: 75%;\n  line-height: 0;\n  position: relative;\n  vertical-align: baseline; }\n\nsub {\n  bottom: -0.25em; }\n\nsup {\n  top: -0.5em; }\n\n/* Embedded content\r\n   ========================================================================== */\n/**\r\n * Remove the border on images inside links in IE 10.\r\n */\nimg {\n  border-style: none; }\n\n/* Forms\r\n   ========================================================================== */\n/**\r\n * 1. Change the font styles in all browsers.\r\n * 2. Remove the margin in Firefox and Safari.\r\n */\nbutton,\ninput,\noptgroup,\nselect,\ntextarea {\n  font-family: inherit;\n  /* 1 */\n  font-size: 100%;\n  /* 1 */\n  line-height: 1.15;\n  /* 1 */\n  margin: 0;\n  /* 2 */ }\n\n/**\r\n * Show the overflow in IE.\r\n * 1. Show the overflow in Edge.\r\n */\nbutton,\ninput {\n  /* 1 */\n  overflow: visible; }\n\n/**\r\n * Remove the inheritance of text transform in Edge, Firefox, and IE.\r\n * 1. Remove the inheritance of text transform in Firefox.\r\n */\nbutton,\nselect {\n  /* 1 */\n  text-transform: none; }\n\n/**\r\n * Correct the inability to style clickable types in iOS and Safari.\r\n */\nbutton,\n[type=\"button\"],\n[type=\"reset\"],\n[type=\"submit\"] {\n  -webkit-appearance: button; }\n\n/**\r\n * Remove the inner border and padding in Firefox.\r\n */\nbutton::-moz-focus-inner,\n[type=\"button\"]::-moz-focus-inner,\n[type=\"reset\"]::-moz-focus-inner,\n[type=\"submit\"]::-moz-focus-inner {\n  border-style: none;\n  padding: 0; }\n\n/**\r\n * Restore the focus styles unset by the previous rule.\r\n */\nbutton:-moz-focusring,\n[type=\"button\"]:-moz-focusring,\n[type=\"reset\"]:-moz-focusring,\n[type=\"submit\"]:-moz-focusring {\n  outline: 1px dotted ButtonText; }\n\n/**\r\n * Correct the padding in Firefox.\r\n */\nfieldset {\n  padding: 0.35em 0.75em 0.625em; }\n\n/**\r\n * 1. Correct the text wrapping in Edge and IE.\r\n * 2. Correct the color inheritance from `fieldset` elements in IE.\r\n * 3. Remove the padding so developers are not caught out when they zero out\r\n *    `fieldset` elements in all browsers.\r\n */\nlegend {\n  box-sizing: border-box;\n  /* 1 */\n  color: inherit;\n  /* 2 */\n  display: table;\n  /* 1 */\n  max-width: 100%;\n  /* 1 */\n  padding: 0;\n  /* 3 */\n  white-space: normal;\n  /* 1 */ }\n\n/**\r\n * Add the correct vertical alignment in Chrome, Firefox, and Opera.\r\n */\nprogress {\n  vertical-align: baseline; }\n\n/**\r\n * Remove the default vertical scrollbar in IE 10+.\r\n */\ntextarea {\n  overflow: auto; }\n\n/**\r\n * 1. Add the correct box sizing in IE 10.\r\n * 2. Remove the padding in IE 10.\r\n */\n[type=\"checkbox\"],\n[type=\"radio\"] {\n  box-sizing: border-box;\n  /* 1 */\n  padding: 0;\n  /* 2 */ }\n\n/**\r\n * Correct the cursor style of increment and decrement buttons in Chrome.\r\n */\n[type=\"number\"]::-webkit-inner-spin-button,\n[type=\"number\"]::-webkit-outer-spin-button {\n  height: auto; }\n\n/**\r\n * 1. Correct the odd appearance in Chrome and Safari.\r\n * 2. Correct the outline style in Safari.\r\n */\n[type=\"search\"] {\n  -webkit-appearance: textfield;\n  /* 1 */\n  outline-offset: -2px;\n  /* 2 */ }\n\n/**\r\n * Remove the inner padding in Chrome and Safari on macOS.\r\n */\n[type=\"search\"]::-webkit-search-decoration {\n  -webkit-appearance: none; }\n\n/**\r\n * 1. Correct the inability to style clickable types in iOS and Safari.\r\n * 2. Change font properties to `inherit` in Safari.\r\n */\n::-webkit-file-upload-button {\n  -webkit-appearance: button;\n  /* 1 */\n  font: inherit;\n  /* 2 */ }\n\n/* Interactive\r\n   ========================================================================== */\n/*\r\n * Add the correct display in Edge, IE 10+, and Firefox.\r\n */\ndetails {\n  display: block; }\n\n/*\r\n * Add the correct display in all browsers.\r\n */\nsummary {\n  display: list-item; }\n\n/* Misc\r\n   ========================================================================== */\n/**\r\n * Add the correct display in IE 10+.\r\n */\ntemplate {\n  display: none; }\n\n/**\r\n * Add the correct display in IE 10.\r\n */\n[hidden] {\n  display: none; }\n\n.game {\n  background: RGB(240, 240, 248);\n  display: grid;\n  grid-gap: 6px;\n  padding: 10px;\n  justify-content: center;\n  align-content: center;\n  width: 50%;\n  margin: 0 auto; }\n\n.game--3x3 {\n  grid-template-columns: repeat(3, 80px);\n  grid-template-rows: repeat(3, 80px); }\n\n.game--3x3 .game__cell-content {\n  line-height: 80px; }\n\n.game--4x4 {\n  grid-template-columns: repeat(4, 60px);\n  grid-template-rows: repeat(4, 60px);\n  width: 40%; }\n\n.game--4x4 .game__cell-content {\n  line-height: 60px; }\n\n.game--5x5 {\n  grid-template-columns: repeat(5, 50px);\n  grid-template-rows: repeat(5, 50px);\n  width: 50%; }\n\n.game--5x5 .game__cell-content {\n  line-height: 50px; }\n\n.game--6x6 {\n  grid-template-columns: repeat(6, 40px);\n  grid-template-rows: repeat(6, 40px); }\n\n.game--6x6 .game__cell-content {\n  line-height: 40px; }\n\n.game--7x7 {\n  grid-template-columns: repeat(7, 40px);\n  grid-template-rows: repeat(7, 40px); }\n\n.game--7x7 .game__cell-content {\n  line-height: 40px; }\n\n.game--8x8 {\n  grid-template-columns: repeat(8, 30px);\n  grid-template-rows: repeat(8, 30px); }\n\n.game--8x8 .game__cell-content {\n  line-height: 30px; }\n\n.game__cell {\n  background-color: #ffffff;\n  display: flex;\n  align-items: center;\n  border-radius: 5px;\n  transition: all 0.7s; }\n\n.game__cell:hover {\n  cursor: grab; }\n\n.game__cell-content {\n  display: inline-block;\n  margin: 0 auto;\n  font-weight: 700;\n  vertical-align: middle;\n  text-align: center;\n  width: 100%;\n  height: 100%;\n  -webkit-touch-callout: none;\n  /* iOS Safari */\n  -webkit-user-select: none;\n  /* Chrome/Safari/Opera */\n  -khtml-user-select: none;\n  /* Konqueror */\n  -moz-user-select: none;\n  /* Firefox */\n  -ms-user-select: none;\n  /* Internet Explorer/Edge */\n  user-select: none;\n  /* Non-prefixed version, currently\r\n                                  not supported by any browser */ }\n\n.game__cell-content:hover {\n  background-color: RGB(253, 153, 42);\n  color: #ffffff;\n  border-radius: 50%; }\n\n@media (max-width: 760px) {\n  .game--6x6 {\n    width: 100%; }\n  .game--4x4 {\n    width: 100%; } }\n\n@media (max-width: 700px) {\n  .game--7x7 {\n    width: 100%; } }\n\n@media (max-width: 600px) {\n  .game--5x5 {\n    width: 100%; } }\n\n@media (max-width: 475px) {\n  .game {\n    width: 100%; } }\n\n.main-buttons {\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap;\n  margin-top: 20px; }\n\n.main-buttons__button {\n  padding: 8px;\n  background-color: RGB(68, 85, 141);\n  margin-bottom: 4px;\n  margin-right: 4px;\n  border-radius: 5px;\n  color: #ffffff; }\n\n.main-buttons__button--stop {\n  background-color: RGB(57, 58, 86); }\n\n.main-buttons__button:hover,\n.main-buttons__button:active {\n  background-color: RGB(253, 153, 42);\n  color: RGB(36, 38, 61); }\n\n.game-status {\n  text-align: center; }\n\n.game-status__moves-amount,\n.game-status__time-min,\n.game-status__time-sec {\n  color: RGB(253, 153, 42);\n  font-weight: 700; }\n\n.game-status__moves-amount {\n  margin-right: 10px; }\n\n.size-buttons {\n  display: flex;\n  justify-content: center;\n  flex-wrap: wrap; }\n\n.size-buttons__button {\n  color: RGB(36, 38, 61);\n  font-weight: 700;\n  text-decoration: underline; }\n\n.size-buttons__button:hover,\n.size-buttons__button:active {\n  color: RGB(253, 153, 42); }\n\n@media (max-width: 375px) {\n  .size-buttons__label {\n    width: 100%;\n    display: inline-block;\n    margin-bottom: 10px;\n    text-align: center; } }\n\n.game-size {\n  text-align: center; }\n\n.game-size__value {\n  color: RGB(253, 153, 42);\n  font-weight: 700; }\n\n* {\n  box-sizing: border-box; }\n\nbody {\n  font-family: \"Roboto\", \"Arial\", sans-serif;\n  font-weight: 400; }\n\n.wrapper {\n  padding-left: 20px;\n  padding-right: 20px;\n  display: flex;\n  flex-direction: column;\n  justify-content: center;\n  position: relative; }\n\n.invisible {\n  display: none; }\n\n.hovered {\n  background-color: RGBA(68, 85, 141, 0.5); }\n", ""]);
 // Exports
 module.exports = exports;
 
@@ -552,6 +552,9 @@ app.start();
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "default", function() { return App; });
+/* harmony import */ var _utils__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./utils */ "./src/js/utils.js");
+
+
 class App {
   constructor() {
     this.state = {
@@ -565,12 +568,19 @@ class App {
     this.gameKeys = [
       '012345678',
       '123456780',
+      '147258360',
+      '741852063',
+      '761852043',
       '0123456789101112131415',
-      '01234567891011121314150',
-      '123456789101112131415161718192021222324',
-      '1234567891011121314151617181920212223242526272829303132333435',
-      '123456789101112131415161718192021222324252627282930313233343536373839404142434445464748',
-      '123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263',
+      '1234567891011121314150',
+      '1234567891011121314151617181920212223240',
+      '0123456789101112131415161718192021222324',
+      '01234567891011121314151617181920212223242526272829303132333435',
+      '12345678910111213141516171819202122232425262728293031323334350',
+      '0123456789101112131415161718192021222324252627282930313233343536373839404142434445464748',
+      '1234567891011121314151617181920212223242526272829303132333435363738394041424344454647480',
+      '0123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263',
+      '1234567891011121314151617181920212223242526272829303132333435363738394041424344454647484950515253545556575859606162630',
     ]    
   }
   
@@ -580,7 +590,7 @@ class App {
       <button id="restart" class="main-buttons__button button">Размешать и начать</button>
       <button class="main-buttons__button main-buttons__button--stop button">Стоп</button>
       <button class="main-buttons__button button">Сохранить</button>
-      <button class="main-buttons__button button">Результаты</button>
+      <button id="results" class="main-buttons__button button">Результаты</button>
     </div>
     <p class="game-status">
       <span class="game-status__moves-label">Ходов</span>
@@ -788,6 +798,10 @@ class App {
         this.state.counter = 0;
         this.start();
       }
+
+      if (target.id === 'results') {
+        this.showResults();
+      }
     } 
     
     document.querySelector('.main-buttons').addEventListener('click', onClick.bind(this));
@@ -797,21 +811,32 @@ class App {
     const elements = document.querySelectorAll('.game__cell-content');
     const empty = document.querySelector('.empty');
     let result = [];
-    const nextValue = empty.nextSibling.querySelector('span').innerHTML;
+    
+    const nextElement = empty.nextSibling;
 
-    elements.forEach((element, index) => {
-      result.push(element.innerHTML);
-      if (elements[index + 1]) {
-        if (elements[index + 1].innerHTML === nextValue) {
-          result.push(0);
-        }
-      }      
-    });
+    if (!nextElement) {
+      elements.forEach((element) => {
+        result.push(element.innerHTML);                     
+      }); 
+      result.push(0);
+    } else {
+      const nextValue = nextElement.querySelector('span').innerHTML;
+
+      elements.forEach((element, index) => {
+        result.push(element.innerHTML);
+        if (elements[index + 1]) {
+          if (elements[index + 1].innerHTML === nextValue) {
+            result.push(0);
+          }
+        }      
+      });
+    }    
 
     let str = result.join('');
     
     if (this.gameKeys.includes(str)) {
       this.popupAction();
+      this.saveResultValue();
     } else {
       console.log('try again')
     }
@@ -833,19 +858,62 @@ class App {
     const popup = this.createElement(template);
   
     contentWrapper.appendChild(popup);
-
-    const closePopup = () => {
-      document.querySelector('.popup__button').addEventListener('click', () => {
-        const popup = document.querySelector('.popup');
-        document.querySelector('main').removeChild(popup);    
-      })
-    };
-
-    closePopup();  
+    this.closePopup();
   } 
 
   restart() {
+    document.body.innerHTML = '';
+    this.state.counter = 0;
+    this.state.time.min = '00';
+    this.state.time.sec = '00';
     this.start();
+  }
+  
+  saveResultValue() {
+    const result = `Ходов ${this.state.counter} Время ${this.state.time.min} : ${this.state.time.sec}`;
+    _utils__WEBPACK_IMPORTED_MODULE_0__["default"].saveResult(result);
+  }
+
+  showResults() {
+    const storedResults = JSON.parse(localStorage.getItem('results'));
+    let resultTemplate;
+
+    let emptyValue = `<p class='popup__result-value'>Пусто</p>`;
+    const fragment = document.createDocumentFragment();
+
+    const template = `<div class='popup'>
+          <div class='popup__content'>      
+            <div class='popup__results'></div>           
+            <button class='button popup__button'>OK</button>
+          </div>
+        </div>`;    
+    
+    const contentWrapper = document.querySelector('main');
+    const popup = this.createElement(template);
+
+    if (!storedResults) {
+      const empty = this.createElement(emptyValue);
+      popup.querySelector('.popup__results').appendChild(empty);
+    } else {
+      storedResults.forEach((item) => {
+        resultTemplate = `<p class='popup__result-value'>${item}</p>`;
+        const element = this.createElement(resultTemplate);
+        fragment.appendChild(element);
+      });       
+
+      popup.querySelector('.popup__results').appendChild(fragment);     
+    }
+  
+    contentWrapper.appendChild(popup);    
+    this.closePopup();    
+  }
+
+  closePopup() {
+    document.querySelector('.popup__button').addEventListener('click', () => {
+      const popup = document.querySelector('.popup');
+      document.querySelector('main').removeChild(popup); 
+      this.restart();    
+    });       
   }
 
   start() {
@@ -861,9 +929,47 @@ class App {
 
     this.moveHandler();
     this.switchGridSize();
-    this.onButtonClick();    
+    this.onButtonClick();
   } 
 }
+
+
+/***/ }),
+
+/***/ "./src/js/utils.js":
+/*!*************************!*\
+  !*** ./src/js/utils.js ***!
+  \*************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+const saveResult = (data) => {
+  const storedResults = JSON.parse(localStorage.getItem('results'));
+
+  if (!storedResults) {    
+    const results = [];
+    results.push(data);
+    localStorage.setItem('results', JSON.stringify(results));
+  } else {
+    if (storedResults.length >= 10) {
+      storedResults.push(data);
+      storedResults.reverse();
+      const newResults = storedResults.slice(0, 10);
+      localStorage.setItem('results', JSON.stringify(newResults));
+    } else {
+      storedResults.push(data);
+      localStorage.setItem('results', JSON.stringify(storedResults));
+    }
+  }   
+};
+
+const UTILS = {
+  saveResult
+};
+
+/* harmony default export */ __webpack_exports__["default"] = (UTILS);
 
 
 /***/ })
