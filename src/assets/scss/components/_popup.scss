@@ -37,13 +37,11 @@
 .popup__title {
   text-align: center;
   font-weight: 700;
-  font-size: 30px;
+  font-size: 20px;
 }
 
-.popup__subject,
-.popup__desc {
-  -moz-text-align-last: left;
-       text-align-last: left;
+.popup__result-value {
+  text-align: center;
   font-weight: 400;
 }
 
