@@ -1,6 +1,8 @@
 @import "utils/vars";
 
-@import "components/button";
+@import 
+  "components/button",
+  "components/popup";
 
 @import "vendors/normalize";
 
@@ -26,6 +28,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 }
 
 .invisible {
