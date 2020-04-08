@@ -44,11 +44,11 @@
 }
 
 .game__cell {
-  border-radius: 0%;
   background-color: $default-color;
   display: flex;
-  align-items: center;
-  transition: all 0.3s;
+  align-items: center;  
+  border-radius: 5px;
+  transition: all 0.7s;
 }
 
 .game__cell:hover {
