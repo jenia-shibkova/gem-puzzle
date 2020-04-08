@@ -7,7 +7,17 @@ export default class App {
         min: '00',
         sec: '00'
       }
-    };    
+    };
+    this.gameKeys = [
+      '012345678',
+      '123456780',
+      '0123456789101112131415',
+      '01234567891011121314150',
+      '123456789101112131415161718192021222324',
+      '1234567891011121314151617181920212223242526272829303132333435',
+      '123456789101112131415161718192021222324252627282930313233343536373839404142434445464748',
+      '123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263',
+    ]    
   }
   
   getTemplate() {
@@ -148,7 +158,9 @@ export default class App {
 
       target.classList.remove('empty');
       cell.classList.add('empty');
+
       this.increaseCounter();
+      this.checkGame();
     }
 
     for(const cell of cells) {
@@ -208,8 +220,8 @@ export default class App {
     const min = document.querySelector('.game-status__time-min');
     const sec = document.querySelector('.game-status__time-sec');
 
-    this.state.time.min = '11';
-    this.state.time.sec = '11';
+    this.state.time.min = '00';
+    this.state.time.sec = '00';
 
     min.innerHTML = this.state.time.min;
     sec.innerHTML = this.state.time.sec;
@@ -226,6 +238,57 @@ export default class App {
     
     document.querySelector('.main-buttons').addEventListener('click', onClick.bind(this));
   }
+
+  checkGame() {
+    const elements = document.querySelectorAll('.game__cell-content');
+    const empty = document.querySelector('.empty');
+    let result = [];
+    const nextValue = empty.nextSibling.querySelector('span').innerHTML;
+
+    elements.forEach((element, index) => {
+      result.push(element.innerHTML);
+      if (elements[index + 1]) {
+        if (elements[index + 1].innerHTML === nextValue) {
+          result.push(0);
+        }
+      }      
+    });
+
+    let str = result.join('');
+    
+    if (this.gameKeys.includes(str)) {
+      this.popupAction();
+    } else {
+      console.log('try again')
+    }
+  }
+
+  popupAction() {  
+    const template = `<div class='popup'>
+          <div class='popup__content'>      
+            <p class='popup__title'>
+              «Ура! Вы решили головоломку за ${this.state.time.min}:${this.state.time.sec}
+               и ${this.state.counter} ходов»
+            </p>
+           
+            <button class='button popup__button'>OK</button>
+          </div>
+        </div>`;
+  
+    const contentWrapper = document.querySelector('main');
+    const popup = this.createElement(template);
+  
+    contentWrapper.appendChild(popup);
+
+    const closePopup = () => {
+      document.querySelector('.popup__button').addEventListener('click', () => {
+        const popup = document.querySelector('.popup');
+        document.querySelector('main').removeChild(popup);    
+      })
+    };
+
+    closePopup();  
+  } 
 
   restart() {
     this.start();
